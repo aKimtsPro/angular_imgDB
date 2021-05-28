@@ -1,0 +1,17 @@
+<h2>Image getter</h2>
+
+<select [(ngModel)]="selectedId">
+    <option value="0" disabled>- choisir le fichier à récupérer -</option>
+    <option [value]="id" *ngFor="let id of idList"> {{ id }} </option>
+</select>
+<button (click)="onReload()">reload</button>
+<button (click)="onGet()">récupérer</button>
+
+<div *ngIf="image">
+    <h4>{{ filename }}</h4>
+    <img [src]="image" [alt]="filename" width="1200px">
+</div>
+<div *ngIf="downloadUrl">
+    <h4>{{ filename }}</h4>
+    <a [href]="downloadUrl" download="{{filename}}"> download </a>
+</div>

@@ -1,0 +1,11 @@
+<h2>Image sender</h2>
+
+<div>
+    <div *ngIf="imgPreview">
+        <img [src]="imgPreview" style="width:200px">
+    </div>
+    <label for="">choisir un fichier : </label>
+    <input type="file" (change)="onFileChanged($event)">   <!-- accept="image/png, image/gif, image/jpeg"  accept="image/*"-->
+</div>
+
+<button (click)="onUpload()">upload</button>
